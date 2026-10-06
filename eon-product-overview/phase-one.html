@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" />
+<style>
+@font-face { font-family: EON; src: local("Titillium Web"); }
+:root { --navy:#103060; --maroon:#9a1f3d; --ink:#142033; --muted:#5c6b7a; --line:#eadfe3; --badge:#f8e9ee; --badge-ink:#9a1f3d; --icon:#eef2f7; --sheet:#fff; --page:#f6f3f4; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--page); color:var(--ink); font:16px/1.5 "Titillium Web", "Segoe UI", Arial, sans-serif; }
+a { color:inherit; }
+.topbar { background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px 4vw; }
+.brand { display:flex; align-items:center; text-decoration:none; }
+.brand img { height:42px; width:auto; display:block; }
+.topbar nav { display:flex; gap:22px; flex-wrap:wrap; }
+.topbar nav a { color:#fff; text-decoration:none; font-size:14px; letter-spacing:.04em; }
+.topbar nav a:hover { text-decoration:underline; }
+.wrap { padding:28px 3vw 40px; }
+.sheet { background:var(--sheet); border-radius:18px; box-shadow:0 18px 50px #1a27401f; padding:28px 22px 22px; }
+h1 { margin:0; font-size:22px; letter-spacing:.08em; color:var(--maroon); }
+.lead { margin:6px 0 0; color:var(--muted); max-width:720px; }
+.platform { margin:18px 0 8px; padding:16px 18px; border:1px solid var(--line); border-radius:14px; background:#fbf6f7; display:flex; justify-content:space-between; gap:16px; align-items:center; flex-wrap:wrap; }
+.platform strong { display:block; color:var(--maroon); font-size:15px; letter-spacing:.04em; }
+.platform p { margin:4px 0 0; color:var(--muted); font-size:14px; }
+.platform a.btn, a.btn { display:inline-block; background:var(--navy); color:#fff; text-decoration:none; border-radius:999px; padding:10px 16px; font-size:14px; font-weight:700; }
+.platform a.url { color:var(--navy); font-weight:700; word-break:break-all; }
+.columns { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px 18px; margin-top:8px; }
+.col h2 { margin:0; color:var(--maroon); font-size:18px; letter-spacing:.04em; }
+.col .sub { margin:6px 0 0; color:var(--muted); font-size:13px; min-height:38px; }
+.rule { height:1px; background:var(--line); margin:10px 0 6px; }
+.prod { display:grid; grid-template-columns:42px minmax(0,1fr); gap:10px; text-decoration:none; padding:10px 4px; border-radius:10px; }
+.prod:hover { background:#fbf6f7; }
+.prod-icon { width:42px; height:42px; border-radius:10px; background:var(--icon); display:grid; place-items:center; color:var(--navy); }
+.prod-icon svg { width:22px; height:22px; }
+.badge { display:inline-block; background:var(--badge); color:var(--badge-ink); font-size:10px; letter-spacing:.08em; font-weight:700; border-radius:999px; padding:2px 8px; }
+.prod strong { display:block; margin-top:4px; color:var(--maroon); font-size:15px; line-height:1.25; }
+.prod em { display:block; margin-top:3px; font-style:normal; color:var(--muted); font-size:13px; line-height:1.35; }
+.shared { margin:8px 4px 0; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8b97a6; }
+.foot { display:flex; gap:22px; flex-wrap:wrap; padding:8px 4vw 36px; font-size:13px; }
+.foot a { color:var(--navy); font-weight:700; text-decoration:none; }
+.toc { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 8px; }
+.toc a { text-decoration:none; color:var(--navy); background:#eef2f7; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700; }
+article { padding:22px 0; border-top:1px solid var(--line); scroll-margin-top:16px; }
+article.here { background:#fbf6f7; border-radius:14px; padding-left:14px; padding-right:14px; }
+.kicker { margin:0; color:var(--muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+article h2 { margin:6px 0 0; color:var(--maroon); font-size:26px; }
+.promise { margin:8px 0 0; font-size:18px; color:var(--ink); }
+article p { max-width:760px; }
+.actions { display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+.actions a { color:var(--navy); font-weight:700; }
+.next { margin-top:8px; padding:16px 18px; background:#fbf6f7; border-radius:14px; }
+@media (max-width:1100px) { .columns { grid-template-columns:1fr 1fr; } }
+@media (max-width:700px) { .columns { grid-template-columns:1fr; } .topbar { flex-wrap:wrap; } }
+</style>
+<title>EON Reality · Phase one product descriptions</title>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/index.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAABcCAMAAADj9ngyAAAAAXNSR0IB2cksfwAAAv1QTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////htTccAAAAP90Uk5TABoHQL/l0v/+/Z/T+vyj9vgtK/Upt/ky9ELqKJdxaLow+y907vcsI8ILxlLIY6RkpdUW4Vsbm7zKjy7YjKE8bg1R7yAx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" alt="EON Reality" /></a>
+  <nav aria-label="Pages">
+    <a href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/index.html">Overview</a>
+    <a href="https://eon-education-government-review.vercel.app/">Long platform</a>
+    <a href="https://eonglobalcampus.com/">Campus</a>
+  </nav>
+</header>
+<div class="wrap">
+  <section class="sheet">
+    <p class="kicker">Phase one of the website</p>
+    <h1>PRODUCT DESCRIPTIONS</h1>
+    <p class="lead">Phase one is the first part to build: the stories that already exist on the long platform. Learn, Train, Perform, and the shared strip. A short card opens this description. This description opens the matching story on the long platform. It does not open an app.</p>
+    <div class="platform">
+      <div>
+        <strong>The long platform</strong>
+        <p>Use this Vercel draft as the story behind every phase-one product.</p>
+        <p><a class="url" href="https://eon-education-government-review.vercel.app/">https://eon-education-government-review.vercel.app/</a></p>
+      </div>
+      <a class="btn" href="https://eon-education-government-review.vercel.app/">Open the long platform</a>
+    </div>
+    <div class="toc"><a href="#universal">EON Universal</a>
+<a href="#xr">EON XR Infinite</a>
+<a href="#live">EON Live</a>
+<a href="#tacit">EON Tacit</a>
+<a href="#genesis">Genesis 3</a>
+<a href="#controlroom">EON Control Room</a>
+<a href="#situation">Situation Room</a>
+<a href="#creator">Situation Room Creator</a>
+<a href="#brainy">Brainy Soft Skills</a>
+<a href="#permit">Permit IQ</a>
+<a href="#field">Field IQ</a>
+<a href="#edge">Field IQ Edge</a>
+<a href="#assess">Assess IQ</a>
+<a href="#compound">Compound IQ</a>
+<a href="#distillery">The Distillery</a>
+<a href="#competence">Competence IQ</a>
+<a href="#control">EON Control</a></div>
+    <article id="universal">
+  <p class="kicker">Learn · Phase one</p>
+  <h2>EON Universal</h2>
+  <p class="promise">Make real places and objects part of the lesson.</p>
+  <p>Bring real places, captured references, internal models, and explorable objects into one starting point for a lesson. Five modules sit inside Universal: 3D Components, Mirror Direct, Mirror Studio, Model Inside, and Worlds.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/universal.html#main">Open this story on the long platform</a><a href="https://www.youtube.com/watch?v=BN9_NSrLzOw">Watch Universal Mirror Studio</a><a href="https://www.youtube.com/watch?v=MxYWI8QBcUY">Watch Model Inside</a></p>
+</article><article id="xr">
+  <p class="kicker">Learn · Phase one</p>
+  <h2>EON XR Infinite</h2>
+  <p class="promise">Name a subject. Make room for discovery.</p>
+  <p>Help a learner meet a subject in space, explore its parts, and return to an explanation. EON XR and EON AI fold into this product. They do not stay as their own cards.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/xr.html#main">Open this story on the long platform</a><a href="https://www.youtube.com/watch?v=NOzq38H2JyA">Watch XR Infinite Soft Skills</a></p>
+</article><article id="live">
+  <p class="kicker">Learn · Phase one</p>
+  <h2>EON Live</h2>
+  <p class="promise">Make changing conditions visible.</p>
+  <p>Show the relationship between an action, the state of the equipment, and the next safe decision. Live sits with Control Room: one for the changing conditions, one for the team.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/live.html#main">Open this story on the long platform</a></p>
+</article><article id="tacit">
+  <p class="kicker">Learn · Phase one</p>
+  <h2>EON Tacit</h2>
+  <p class="promise">Keep the experience that never made it into the handbook.</p>
+  <p>Interview the people who know, keep their exact words, and ask a second person to verify the claims. Tacit and Brainy Soft Skills are two products.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/tacit.html#main">Open this story on the long platform</a></p>
+</article><article id="genesis">
+  <p class="kicker">Train · Phase one</p>
+  <h2>Genesis 3</h2>
+  <p class="promise">Turn knowledge into something you can practise.</p>
+  <p>Use reviewed curriculum, source material, or a procedure to give someone a place to practise, then look at the decisions they made. Genesis Trainer and Genesis Simulator become Genesis 3.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/genesis.html#main">Open this story on the long platform</a></p>
+</article><article id="controlroom">
+  <p class="kicker">Train · Phase one</p>
+  <h2>EON Control Room</h2>
+  <p class="promise">Understand the system. Practise as a team.</p>
+  <p>Connect operator, field, command, and instructor views in one virtual operation. The team practises the system together.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/controlroom.html#main">Open this story on the long platform</a><a href="https://www.youtube.com/watch?v=POkUOq1V0Iw">Watch EON Control Room</a></p>
+</article><article id="situation">
+  <p class="kicker">Train · Phase one</p>
+  <h2>Situation Room</h2>
+  <p class="promise">Practise judgement before the difficult moment.</p>
+  <p>A team examines an incident, weighs the evidence, and talks through the decision before the pressure is real.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/situation.html#main">Open this story on the long platform</a></p>
+</article><article id="creator">
+  <p class="kicker">Train · Phase one</p>
+  <h2>Situation Room Creator</h2>
+  <p class="promise">The institution&#x27;s place to train and perform.</p>
+  <p>Bring reviewed courses, scenarios, and learning experiences into a space shaped around the institution.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/creator.html#main">Open this story on the long platform</a></p>
+</article><article id="brainy">
+  <p class="kicker">Train · Phase one</p>
+  <h2>Brainy Soft Skills</h2>
+  <p class="promise">Practise the conversations that change outcomes.</p>
+  <p>Rehearse with AI stakeholders who respond to what is said. Review how the person listened, explained, and handled competing concerns. Brainy is not a replacement for Tacit.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/brainy.html#main">Open this story on the long platform</a></p>
+</article><article id="permit">
+  <p class="kicker">Perform · Phase one</p>
+  <h2>Permit IQ</h2>
+  <p class="promise">Understand how controlled work is prepared.</p>
+  <p>Make the job, its controls, and the supporting evidence easier to understand. Authorised people remain in charge.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/permit.html#main">Open this story on the long platform</a></p>
+</article><article id="field">
+  <p class="kicker">Perform · Phase one</p>
+  <h2>Field IQ</h2>
+  <p class="promise">Bring guidance into practical work.</p>
+  <p>Connect preparation, training, field use, and monitoring so people can see how a guided task is carried out and reviewed.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/field.html#main">Open this story on the long platform</a></p>
+</article><article id="edge">
+  <p class="kicker">Perform · Phase one</p>
+  <h2>Field IQ Edge</h2>
+  <p class="promise">Guidance when a cloud connection is unavailable.</p>
+  <p>A prepared example of step-by-step assistance when the cloud connection is gone. Field IQ and Field IQ Edge are two cards.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/edge.html#main">Open this story on the long platform</a><a href="https://www.youtube.com/watch?v=7lnGT6dN_1o">Watch Field IQ Edge</a></p>
+</article><article id="assess">
+  <p class="kicker">Perform · Phase one</p>
+  <h2>Assess IQ</h2>
+  <p class="promise">Make performance visible against a clear standard.</p>
+  <p>Bring the task, a recorded run, and its result together so a learner and an assessor can review the evidence. Assess IQ stays inside the Work Loop.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/assess.html#main">Open this story on the long platform</a></p>
+</article><article id="compound">
+  <p class="kicker">Perform · Phase one</p>
+  <h2>Compound IQ</h2>
+  <p class="promise">Use reviewed lessons to improve the next practice.</p>
+  <p>Look at the difference between the plan and what happened. Keep the safe, repeated lessons ready for a governed update.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/compound.html#main">Open this story on the long platform</a><a href="https://www.youtube.com/watch?v=8WZr5nDasK8">Watch Compound IQ</a></p>
+</article><article id="distillery">
+  <p class="kicker">Perform · Phase one</p>
+  <h2>The Distillery</h2>
+  <p class="promise">Prepare reviewed knowledge for careful reuse.</p>
+  <p>Turn a bounded source into an evidence package that accountable people can review, test, and release on purpose.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/distillery.html#main">Open this story on the long platform</a><a href="https://www.youtube.com/watch?v=87c_ch17v0Q">Watch The Distillery</a></p>
+</article><article id="competence">
+  <p class="kicker">Shared intelligence · Phase one</p>
+  <h2>Competence IQ</h2>
+  <p class="promise">See the evidence behind a capability.</p>
+  <p>Connect a task, an assessment, and an accountable decision in a record people can inspect. This stays in the shared strip under Perform. It is not a fifth column.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/competence.html#main">Open this story on the long platform</a><a href="https://www.youtube.com/watch?v=X0aEyqYXt48">Watch Competence IQ</a></p>
+</article><article id="control">
+  <p class="kicker">Shared intelligence · Phase one</p>
+  <h2>EON Control</h2>
+  <p class="promise">Keep people, learning, and results in view.</p>
+  <p>Help a team find the activity, review progress, and open the evidence behind a result. EON Control sits in the same shared strip as Competence IQ.</p>
+  <p class="actions"><a href="https://eon-education-government-review.vercel.app/products/control.html#main">Open this story on the long platform</a><a href="https://www.youtube.com/watch?v=IVe3-QiwR4U">Watch EON Control</a></p>
+</article>
+    <div class="next" id="outcomes">
+      <p class="kicker">Not in phase one</p>
+      <h2 style="color:var(--maroon);margin:6px 0 0">Outcomes</h2>
+      <p>Career Compass, Venture Builder, AI Fluency, and Sentient Worlds stay. Their long stories are not on the platform yet, so the cards stay on the published pages until those stories exist.</p>
+      <p class="actions"><a href="https://eonreality.com/eon-career-compass/">Career Compass</a><a href="https://eonreality.com/eon-venture-builder/">Venture Builder</a><a href="https://eonglobalcampus.com/ai-fluency">AI Fluency</a><a href="https://eonreality.com/eon-sentient-worlds/">Sentient Worlds</a></p>
+    </div>
+  </section>
+</div>
+<p class="foot">
+  <a href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/index.html">Product overview</a>
+  <a href="https://eon-education-government-review.vercel.app/">The long platform</a>
+  <a href="https://eonglobalcampus.com/">Global Virtual Campus</a>
+</p>
+
+<script>
+(function () {
+  var match = (location.search || "").match(/[?&]product=([a-z0-9]+)/);
+  if (!match) return;
+  var target = document.getElementById(match[1]);
+  if (!target) return;
+  target.classList.add("here");
+  target.scrollIntoView();
+})();
+</script>
+</body>
+</html>

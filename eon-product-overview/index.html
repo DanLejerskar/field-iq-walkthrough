@@ -1,143 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>EON Reality · Our products</title>
-  <link rel="stylesheet" href="assets/menu.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" />
+<style>
+@font-face { font-family: EON; src: local("Titillium Web"); }
+:root { --navy:#103060; --maroon:#9a1f3d; --ink:#142033; --muted:#5c6b7a; --line:#eadfe3; --badge:#f8e9ee; --badge-ink:#9a1f3d; --icon:#eef2f7; --sheet:#fff; --page:#f6f3f4; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--page); color:var(--ink); font:16px/1.5 "Titillium Web", "Segoe UI", Arial, sans-serif; }
+a { color:inherit; }
+.topbar { background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px 4vw; }
+.brand { display:flex; align-items:center; text-decoration:none; }
+.brand img { height:42px; width:auto; display:block; }
+.topbar nav { display:flex; gap:22px; flex-wrap:wrap; }
+.topbar nav a { color:#fff; text-decoration:none; font-size:14px; letter-spacing:.04em; }
+.topbar nav a:hover { text-decoration:underline; }
+.wrap { padding:28px 3vw 40px; }
+.sheet { background:var(--sheet); border-radius:18px; box-shadow:0 18px 50px #1a27401f; padding:28px 22px 22px; }
+h1 { margin:0; font-size:22px; letter-spacing:.08em; color:var(--maroon); }
+.lead { margin:6px 0 0; color:var(--muted); max-width:720px; }
+.platform { margin:18px 0 8px; padding:16px 18px; border:1px solid var(--line); border-radius:14px; background:#fbf6f7; display:flex; justify-content:space-between; gap:16px; align-items:center; flex-wrap:wrap; }
+.platform strong { display:block; color:var(--maroon); font-size:15px; letter-spacing:.04em; }
+.platform p { margin:4px 0 0; color:var(--muted); font-size:14px; }
+.platform a.btn, a.btn { display:inline-block; background:var(--navy); color:#fff; text-decoration:none; border-radius:999px; padding:10px 16px; font-size:14px; font-weight:700; }
+.platform a.url { color:var(--navy); font-weight:700; word-break:break-all; }
+.columns { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px 18px; margin-top:8px; }
+.col h2 { margin:0; color:var(--maroon); font-size:18px; letter-spacing:.04em; }
+.col .sub { margin:6px 0 0; color:var(--muted); font-size:13px; min-height:38px; }
+.rule { height:1px; background:var(--line); margin:10px 0 6px; }
+.prod { display:grid; grid-template-columns:42px minmax(0,1fr); gap:10px; text-decoration:none; padding:10px 4px; border-radius:10px; }
+.prod:hover { background:#fbf6f7; }
+.prod-icon { width:42px; height:42px; border-radius:10px; background:var(--icon); display:grid; place-items:center; color:var(--navy); }
+.prod-icon svg { width:22px; height:22px; }
+.badge { display:inline-block; background:var(--badge); color:var(--badge-ink); font-size:10px; letter-spacing:.08em; font-weight:700; border-radius:999px; padding:2px 8px; }
+.prod strong { display:block; margin-top:4px; color:var(--maroon); font-size:15px; line-height:1.25; }
+.prod em { display:block; margin-top:3px; font-style:normal; color:var(--muted); font-size:13px; line-height:1.35; }
+.shared { margin:8px 4px 0; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8b97a6; }
+.foot { display:flex; gap:22px; flex-wrap:wrap; padding:8px 4vw 36px; font-size:13px; }
+.foot a { color:var(--navy); font-weight:700; text-decoration:none; }
+.toc { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 8px; }
+.toc a { text-decoration:none; color:var(--navy); background:#eef2f7; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700; }
+article { padding:22px 0; border-top:1px solid var(--line); }
+.kicker { margin:0; color:var(--muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+article h2 { margin:6px 0 0; color:var(--maroon); font-size:26px; }
+.promise { margin:8px 0 0; font-size:18px; color:var(--ink); }
+article p { max-width:760px; }
+.actions { display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+.actions a { color:var(--navy); font-weight:700; }
+.next { margin-top:8px; padding:16px 18px; background:#fbf6f7; border-radius:14px; }
+@media (max-width:1100px) { .columns { grid-template-columns:1fr 1fr; } }
+@media (max-width:700px) { .columns { grid-template-columns:1fr; } .topbar { flex-wrap:wrap; } }
+</style>
+<title>EON Reality · Our products</title>
 </head>
 <body>
-  <a class="skip" href="#overview">Skip to products</a>
-  <header class="topbar">
-    <a class="brand" href="https://eonreality.com/"><img src="assets/brand/eon-reality-logo-white.png" alt="EON Reality" /></a>
-    <nav aria-label="Product groups">
-      <a href="#learn">Learn</a>
-      <a href="#train">Train</a>
-      <a href="#perform">Perform</a>
-      <a href="#outcomes">Outcomes</a>
-    </nav>
-  </header>
-  <div class="sheet-wrap">
-    <section class="sheet" id="overview" aria-label="Product overview">
-      <div class="sheet-intro">
-        <div>
-          <h1>OUR PRODUCTS</h1>
-          <p>Learn it. Train it. Perform it. Get the job and secure it.</p>
-        </div>
+<a class="skip" href="#overview" style="position:absolute;left:-999px">Skip to products</a>
+<header class="topbar">
+  <a class="brand" href="https://eonreality.com/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAABcCAMAAADj9ngyAAAAAXNSR0IB2cksfwAAAv1QTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////htTccAAAAP90Uk5TABoHQL/l0v/+/Z/T+vyj9vgtK/Upt/ky9ELqKJdxaLow+y907vcsI8ILxlLIY6RkpdUW4Vsbm7zKjy7YjKE8bg1R7yAx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" alt="EON Reality" /></a>
+  <nav aria-label="Product groups">
+    <a href="#learn">Learn</a>
+    <a href="#train">Train</a>
+    <a href="#perform">Perform</a>
+    <a href="#outcomes">Outcomes</a>
+    <a href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html">Phase one</a>
+  </nav>
+</header>
+<div class="wrap">
+  <section class="sheet" id="overview" aria-label="Product overview">
+    <h1>OUR PRODUCTS</h1>
+    <p class="lead">Learn it. Train it. Perform it. Get the job and secure it.</p>
+    <div class="platform">
+      <div>
+        <strong>The long platform</strong>
+        <p>This menu is the short page. The draft of the full story is on Vercel. A click on Learn, Train, or Perform opens that product in phase one, and phase one opens the same story on the long platform.</p>
+        <p><a class="url" href="https://eon-education-government-review.vercel.app/">https://eon-education-government-review.vercel.app/</a></p>
       </div>
-      <div class="columns">
-        <div class="col" id="learn">
-          <h2>LEARN</h2>
-          <p class="sub">See the subject, the place, and the knowledge.</p>
-          <div class="rule"></div>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/universal.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2 2.5 2 13.5 0 16M12 4c-2 2.5-2 13.5 0 16"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>EON Universal</strong><em>Make real places and objects part of the lesson.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/xr.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h6l2 3h8v7H4z"/><path d="M8 8V6h4"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>EON XR Infinite</strong><em>Name a subject. Make room for discovery.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/live.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14c2-4 4-4 6 0s4 4 6 0 4-4 4 0"/><circle cx="12" cy="7" r="2"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>EON Live</strong><em>Make changing conditions visible.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/tacit.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 5h9a3 3 0 0 1 3 3v11H9a3 3 0 0 0-3 3z"/><path d="M6 5v14"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>EON Tacit</strong><em>Keep the experience that never made it into the handbook.</em></span>
-          </a>
-        </div>
-        <div class="col" id="train">
-          <h2>TRAIN</h2>
-          <p class="sub">Practise the task, the decision, and the conversation.</p>
-          <div class="rule"></div>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/genesis.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Genesis 3</strong><em>Turn knowledge into something you can practise.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/controlroom.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>EON Control Room</strong><em>Understand the system. Practise as a team.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/situation.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 3v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V6z"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Situation Room</strong><em>Practise judgement before the difficult moment.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/creator.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M12 6l4 4"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Situation Room Creator</strong><em>The institution’s place to train and perform.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/brainy.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="10" r="2"/><circle cx="16" cy="10" r="2"/><path d="M4 18c1-3 3-4 4-4s3 1 4 4M12 18c1-3 3-4 4-4s3 1 4 4"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Brainy Soft Skills</strong><em>Practise the conversations that change outcomes.</em></span>
-          </a>
-        </div>
-        <div class="col" id="perform">
-          <h2>PERFORM</h2>
-          <p class="sub">Do the work, then show the evidence.</p>
-          <div class="rule"></div>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/permit.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Permit IQ</strong><em>Understand how controlled work is prepared.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/field.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="17" r="1"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Field IQ</strong><em>Bring guidance into practical work.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/edge.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h16v10H4z"/><path d="M8 8V6h8v2M12 12v3"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Field IQ Edge</strong><em>Guidance when a cloud connection is unavailable.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/assess.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16H5z"/><path d="M8 9l2 2 4-4"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Assess IQ</strong><em>Make performance visible against a clear standard.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/compound.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 16l4-4 3 3 7-7"/><path d="M14 8h5v5"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Compound IQ</strong><em>Use reviewed lessons to improve the next practice.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/distillery.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3h8l-1 6a4 4 0 0 1-6 0z"/><path d="M9 14h6v7H9z"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>The Distillery</strong><em>Prepare reviewed knowledge for careful reuse.</em></span>
-          </a>
-          <p class="shared">Shared intelligence</p>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/competence.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l3 2"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Competence IQ</strong><em>See the evidence behind a capability.</em></span>
-          </a>
-          <a class="prod" href="https://eon-education-government-review.vercel.app/products/control.html#main">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>EON Control</strong><em>Keep people, learning, and results in view.</em></span>
-          </a>
-        </div>
-        <div class="col" id="outcomes">
-          <h2>OUTCOMES</h2>
-          <p class="sub">Get the job, and secure it.</p>
-          <div class="rule"></div>
-          <a class="prod" href="https://eonreality.com/eon-career-compass/">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2 2"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Career Compass</strong><em>Skills to jobs to income.</em></span>
-          </a>
-          <a class="prod" href="https://eonreality.com/eon-venture-builder/">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19V9l7-4 7 4v10"/><path d="M10 19v-5h4v5"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Venture Builder</strong><em>From a local problem to a launched venture.</em></span>
-          </a>
-          <a class="prod" href="https://eonglobalcampus.com/ai-fluency">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 18V10M10 18V7M15 18v-5M20 18V5"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>AI Fluency</strong><em>The skill under every other skill.</em></span>
-          </a>
-          <a class="prod" href="https://eonreality.com/eon-sentient-worlds/">
-            <span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2 2M16.4 16.4l2 2M18.4 5.6l-2 2M7.6 16.4l-2 2"/></svg></span>
-            <span><span class="badge">SPATIAL</span><strong>Sentient Worlds</strong><em>A topic becomes a world you can return to.</em></span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </div>
-  <p class="foot">
-    <a href="https://eon-education-government-review.vercel.app/#products">The platform</a>
-    <a href="https://eonglobalcampus.com/">Global Virtual Campus</a>
-  </p>
+      <a class="btn" href="https://eon-education-government-review.vercel.app/">Open the long platform</a>
+    </div>
+    <div class="columns">
+      <div class="col" id="learn"><h2>LEARN</h2><p class="sub">See the subject, the place, and the knowledge.</p><div class="rule"></div><a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=universal"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2 2.5 2 13.5 0 16M12 4c-2 2.5-2 13.5 0 16"/></svg></span><span><span class="badge">SPATIAL</span><strong>EON Universal</strong><em>Make real places and objects part of the lesson.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=xr"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h6l2 3h8v7H4z"/><path d="M8 8V6h4"/></svg></span><span><span class="badge">SPATIAL</span><strong>EON XR Infinite</strong><em>Name a subject. Make room for discovery.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=live"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14c2-4 4-4 6 0s4 4 6 0 4-4 4 0"/><circle cx="12" cy="7" r="2"/></svg></span><span><span class="badge">SPATIAL</span><strong>EON Live</strong><em>Make changing conditions visible.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=tacit"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 5h9a3 3 0 0 1 3 3v11H9a3 3 0 0 0-3 3z"/><path d="M6 5v14"/></svg></span><span><span class="badge">SPATIAL</span><strong>EON Tacit</strong><em>Keep the experience that never made it into the handbook.</em></span></a></div><div class="col" id="train"><h2>TRAIN</h2><p class="sub">Practise the task, the decision, and the conversation.</p><div class="rule"></div><a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=genesis"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span><span><span class="badge">SPATIAL</span><strong>Genesis 3</strong><em>Turn knowledge into something you can practise.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=controlroom"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><span><span class="badge">SPATIAL</span><strong>EON Control Room</strong><em>Understand the system. Practise as a team.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=situation"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 3v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V6z"/></svg></span><span><span class="badge">SPATIAL</span><strong>Situation Room</strong><em>Practise judgement before the difficult moment.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=creator"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M12 6l4 4"/></svg></span><span><span class="badge">SPATIAL</span><strong>Situation Room Creator</strong><em>The institution&#x27;s place to train and perform.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=brainy"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="10" r="2"/><circle cx="16" cy="10" r="2"/><path d="M4 18c1-3 3-4 4-4s3 1 4 4M12 18c1-3 3-4 4-4s3 1 4 4"/></svg></span><span><span class="badge">SPATIAL</span><strong>Brainy Soft Skills</strong><em>Practise the conversations that change outcomes.</em></span></a></div><div class="col" id="perform"><h2>PERFORM</h2><p class="sub">Do the work, then show the evidence.</p><div class="rule"></div><a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=permit"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><span><span class="badge">SPATIAL</span><strong>Permit IQ</strong><em>Understand how controlled work is prepared.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=field"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="17" r="1"/></svg></span><span><span class="badge">SPATIAL</span><strong>Field IQ</strong><em>Bring guidance into practical work.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=edge"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h16v10H4z"/><path d="M8 8V6h8v2M12 12v3"/></svg></span><span><span class="badge">SPATIAL</span><strong>Field IQ Edge</strong><em>Guidance when a cloud connection is unavailable.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=assess"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16H5z"/><path d="M8 9l2 2 4-4"/></svg></span><span><span class="badge">SPATIAL</span><strong>Assess IQ</strong><em>Make performance visible against a clear standard.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=compound"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 16l4-4 3 3 7-7"/><path d="M14 8h5v5"/></svg></span><span><span class="badge">SPATIAL</span><strong>Compound IQ</strong><em>Use reviewed lessons to improve the next practice.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=distillery"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3h8l-1 6a4 4 0 0 1-6 0z"/><path d="M9 14h6v7H9z"/></svg></span><span><span class="badge">SPATIAL</span><strong>The Distillery</strong><em>Prepare reviewed knowledge for careful reuse.</em></span></a><p class="shared">Shared intelligence</p>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=competence"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l3 2"/></svg></span><span><span class="badge">SPATIAL</span><strong>Competence IQ</strong><em>See the evidence behind a capability.</em></span></a>
+<a class="prod" href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html?product=control"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span><span><span class="badge">SPATIAL</span><strong>EON Control</strong><em>Keep people, learning, and results in view.</em></span></a></div><div class="col" id="outcomes"><h2>OUTCOMES</h2><p class="sub">Get the job, and secure it.</p><div class="rule"></div><a class="prod" href="https://eonreality.com/eon-career-compass/"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2 2"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></span><span><span class="badge">SPATIAL</span><strong>Career Compass</strong><em>Skills to jobs to income.</em></span></a>
+<a class="prod" href="https://eonreality.com/eon-venture-builder/"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19V9l7-4 7 4v10"/><path d="M10 19v-5h4v5"/></svg></span><span><span class="badge">SPATIAL</span><strong>Venture Builder</strong><em>From a local problem to a launched venture.</em></span></a>
+<a class="prod" href="https://eonglobalcampus.com/ai-fluency"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 18V10M10 18V7M15 18v-5M20 18V5"/></svg></span><span><span class="badge">SPATIAL</span><strong>AI Fluency</strong><em>The skill under every other skill.</em></span></a>
+<a class="prod" href="https://eonreality.com/eon-sentient-worlds/"><span class="prod-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2 2M16.4 16.4l2 2M18.4 5.6l-2 2M7.6 16.4l-2 2"/></svg></span><span><span class="badge">SPATIAL</span><strong>Sentient Worlds</strong><em>A topic becomes a world you can return to.</em></span></a></div>
+    </div>
+  </section>
+</div>
+<p class="foot">
+  <a href="https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/phase-one.html">Phase one descriptions</a>
+  <a href="https://eon-education-government-review.vercel.app/">The long platform</a>
+  <a href="https://eonglobalcampus.com/">Global Virtual Campus</a>
+</p>
 </body>
 </html>
