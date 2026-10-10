@@ -82,3 +82,11 @@ a.price-row span { color: #aebbd2; }
   .shelf-hero .copy, .product-hero .copy { max-width: none; padding: 24px 24px 28px; }
   section.cinematic-hero.platform.root-hero .hero-copy { width: 100%; max-width: none; }
 }
+.header-actions { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; }
+a.header-contact { color: #d4dced; text-decoration: none; font-size: 15px; white-space: nowrap; }
+a.header-contact[aria-current="page"] { color: #fff; }
+.plain a:not(.button) { color: #8ec8ff; }
+.start-here { padding-bottom: 64px; }
+@media (max-width: 850px) {
+  .header-actions { margin-left: auto; }
+}
