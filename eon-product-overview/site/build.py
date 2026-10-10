@@ -184,10 +184,10 @@ PRODUCTS = [
 ]
 
 SHELF_IMAGE = {
-    "learn": "images/learn-shelf.jpg",
-    "train": "images/train-shelf.jpg",
-    "perform": "images/perform-shelf.jpg",
-    "achieve": "images/achieve-shelf.jpg",
+    "learn": "images/learn-shelf.jpg?v=daylight",
+    "train": "images/train-shelf.jpg?v=daylight",
+    "perform": "images/perform-shelf.jpg?v=daylight",
+    "achieve": "images/achieve-shelf.jpg?v=daylight",
 }
 
 SHELVES = {
@@ -205,7 +205,7 @@ def product_href(product):
 def image_for(product):
     specific = ROOT / "images" / f"{product['slug']}.jpg"
     if specific.exists():
-        return f"images/{product['slug']}.jpg"
+        return f"images/{product['slug']}.jpg?v=daylight"
     return SHELF_IMAGE[product["shelf"]]
 
 
@@ -229,7 +229,7 @@ def cards_for(shelf):
 def build_home():
     body = '''
 <section class="cinematic-hero platform root-hero">
-  <div class="hero-art"><img alt="Three people around a luminous campus model at dusk." src="images/home-hero.jpg" width="1536" height="864" /></div>
+  <div class="hero-art"><img alt="Three people around a luminous campus model in daylight." src="images/home-hero.jpg?v=daylight" width="1536" height="864" /></div>
   <div class="hero-shade"></div>
   <div class="hero-copy">
     <p class="eyebrow">EON REALITY · EDUCATION FOR THE AI ERA</p>
@@ -251,19 +251,19 @@ def build_home():
   </div>
 </section>
 <section class="band">
-  <img src="images/education-experience.jpg" alt="A learner and an educator study a luminous heart." />
+  <img src="images/education-experience.jpg?v=daylight" alt="A learner and an educator study a luminous heart." />
   <div class="copy"><p class="eyebrow">FOR EDUCATION</p><h2>Help people learn by experiencing.</h2><p>A heart becomes a spatial lesson. A historical place becomes an investigation. A practical procedure becomes something a learner can rehearse. The Global Virtual Campus is the place they enter.</p><p class="actions"><a class="button primary" href="education.html">The education story</a></p></div>
 </section>
 <section class="band reverse">
   <div class="copy"><p class="eyebrow">FOR GOVERNMENT</p><h2>Build public-service capability that lasts.</h2><p>The same story, told for institutions. Preserve experience, rehearse the difficult conversation, and help people prepare for a responsibility that has a name.</p><p class="actions"><a class="button primary" href="government.html">The government story</a></p></div>
-  <img src="images/government-story.jpg" alt="Three public servants around a city model at dusk." />
+  <img src="images/government-story.jpg?v=daylight" alt="Three public servants around a city model in daylight." />
 </section>
 <section class="plain"><p class="eyebrow">THE SHELVES</p><h2>Learn. Train. Perform. Achieve.</h2><p>This is the only product map. The path above is the story. These four words are how you choose. Learn and train use the Digital Twin. Perform uses the Work Loop. Achieve is what a person takes with them.</p></section>
 <div class="doors">
-  <a class="door" href="learn.html"><img src="images/learn-shelf.jpg" alt="" /><span><strong>Learn</strong><em>See the subject, the place, and the knowledge.</em></span></a>
-  <a class="door" href="train.html"><img src="images/train-shelf.jpg" alt="" /><span><strong>Train</strong><em>Practise the task, the decision, and the conversation.</em></span></a>
-  <a class="door" href="perform.html"><img src="images/perform-shelf.jpg" alt="" /><span><strong>Perform</strong><em>Do the work, then show the evidence.</em></span></a>
-  <a class="door" href="achieve.html"><img src="images/achieve-shelf.jpg" alt="" /><span><strong>Achieve</strong><em>Get the job, and secure it.</em></span></a>
+  <a class="door" href="learn.html"><img src="images/learn-shelf.jpg?v=daylight" alt="" /><span><strong>Learn</strong><em>See the subject, the place, and the knowledge.</em></span></a>
+  <a class="door" href="train.html"><img src="images/train-shelf.jpg?v=daylight" alt="" /><span><strong>Train</strong><em>Practise the task, the decision, and the conversation.</em></span></a>
+  <a class="door" href="perform.html"><img src="images/perform-shelf.jpg?v=daylight" alt="" /><span><strong>Perform</strong><em>Do the work, then show the evidence.</em></span></a>
+  <a class="door" href="achieve.html"><img src="images/achieve-shelf.jpg?v=daylight" alt="" /><span><strong>Achieve</strong><em>Get the job, and secure it.</em></span></a>
 </div>
 '''
     shell("index.html", "From the jobs of the future", body)
@@ -271,7 +271,7 @@ def build_home():
 
 def build_story_pages():
     shell("education.html", "Education", f'''
-<section class="product-hero"><img src="images/education-experience.jpg" alt="" /><div class="veil"></div>
+<section class="product-hero"><img src="images/education-experience.jpg?v=daylight" alt="" /><div class="veil"></div>
   <div class="copy"><p class="eyebrow">FOR EDUCATION</p><h1>Help people learn by experiencing.</h1>
   <p class="hero-description">Connect abstract ideas with memorable experiences. Give learners a place to practise and a way to discuss how they performed.</p></div>
 </section>
@@ -280,7 +280,7 @@ def build_story_pages():
 <p class="actions"><a class="button primary" href="{CAMPUS}">Open the Global Virtual Campus</a><a class="button secondary" href="learn.html">Go to Learn</a></p></section>
 ''')
     shell("government.html", "Government", '''
-<section class="product-hero"><img src="images/government-story.jpg" alt="" /><div class="veil"></div>
+<section class="product-hero"><img src="images/government-story.jpg?v=daylight" alt="" /><div class="veil"></div>
   <div class="copy"><p class="eyebrow">FOR GOVERNMENT</p><h1>Build public-service capability that lasts.</h1>
   <p class="hero-description">Preserve institutional experience, rehearse decisions, and help people prepare for clearly defined responsibilities.</p></div>
 </section>
@@ -297,7 +297,7 @@ def build_story_pages():
 <p class="actions"><a class="button primary" href="platform.html">One platform</a><a class="button secondary" href="index.html">Back to the opening</a></p></section>
 ''')
     shell("platform.html", "One platform", '''
-<section class="product-hero"><img src="images/platform.jpg" alt="A campus model and a work folder on one table." /><div class="veil"></div>
+<section class="product-hero"><img src="images/platform.jpg?v=daylight" alt="A campus model and a work folder on one table." /><div class="veil"></div>
   <div class="copy"><p class="eyebrow">ONE PLATFORM</p><h1>Four shelves. Two engines.</h1>
   <p class="hero-description">Learn and train in the Digital Twin. Perform in the Work Loop. Achieve is what you take with you.</p></div>
 </section>
