@@ -24,12 +24,13 @@ section.cinematic-hero.platform.root-hero > .hero-shade {
   max-height: none;
   pointer-events: none;
   opacity: 1;
-  background: linear-gradient(90deg, #070c19 0%, #070c19f5 7%, #070c19c4 18%, #070c1970 32%, #070c1926 46%, #070c1900 58%, transparent 70%);
+  /* Solid across the whole text block, then clear so the right side of the photo stays bright. */
+  background: linear-gradient(90deg, #070c19 0%, #070c19 42%, transparent 68%);
 }
 .shelf-hero > .veil,
 .product-hero > .veil { z-index: 0; }
-section.cinematic-hero.platform.root-hero .hero-copy { width: min(760px, 54%); max-width: 760px; }
-.shelf-hero .copy, .product-hero .copy { position: relative; z-index: 1; padding: 72px 4.8vw 48px; max-width: 760px; background: transparent; }
+section.cinematic-hero.platform.root-hero .hero-copy { width: min(640px, 42%); max-width: min(640px, 42%); }
+.shelf-hero .copy, .product-hero .copy { position: relative; z-index: 1; padding: 72px 4.8vw 48px; max-width: min(640px, calc(42% + 4.8vw)); background: transparent; }
 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 8px 4.8vw 72px; }
 a.card { display: block; background: #0e1830; border: 1px solid #29364e; border-radius: 16px; overflow: hidden; text-decoration: none; }
 a.card img { width: 100%; height: 230px; object-fit: cover; display: block; }
@@ -53,7 +54,15 @@ a.price-row span { color: #aebbd2; }
   .shelf-hero > .veil,
   .product-hero > .veil {
     display: block;
-    background: linear-gradient(90deg, #070c19 0%, #070c19f5 7%, #070c19c4 18%, #070c1970 32%, #070c1926 46%, #070c1900 58%, transparent 70%);
+    background: linear-gradient(90deg, #070c19 0%, #070c19 42%, transparent 68%);
+  }
+  section.cinematic-hero.platform.root-hero .hero-copy {
+    width: min(640px, 42%);
+    max-width: min(640px, 42%);
+  }
+  .shelf-hero .copy,
+  .product-hero .copy {
+    max-width: min(640px, calc(42% + 4.8vw));
   }
 }
 @media (max-width: 980px) {
@@ -62,7 +71,8 @@ a.price-row span { color: #aebbd2; }
   .shelf-hero, .product-hero { min-height: 520px; }
 }
 @media (max-width: 600px) {
-  .shelf-hero, .product-hero { min-height: 0; display: flex; flex-direction: column; align-items: stretch; }
+  /* Photo on top. Copy sits on the dark background so the headline stays readable. */
+  .shelf-hero, .product-hero { min-height: 0; display: flex; flex-direction: column; align-items: stretch; background: #070c19; }
   .shelf-hero > img, .product-hero > img { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 16 / 9; }
   .shelf-hero > .veil,
   .product-hero > .veil,
@@ -77,10 +87,10 @@ a.price-row span { color: #aebbd2; }
     height: 56.25vw;
     max-height: 420px;
     z-index: 1;
-    background: linear-gradient(180deg, transparent 46%, #070c19 100%);
+    background: linear-gradient(180deg, transparent 28%, #070c19 100%);
   }
-  .shelf-hero .copy, .product-hero .copy { max-width: none; padding: 24px 24px 28px; }
-  section.cinematic-hero.platform.root-hero .hero-copy { width: 100%; max-width: none; }
+  .shelf-hero .copy, .product-hero .copy { max-width: none; padding: 24px 24px 28px; background: #070c19; }
+  section.cinematic-hero.platform.root-hero .hero-copy { width: 100%; max-width: none; background: #070c19; }
 }
 .header-actions { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; }
 a.header-contact { color: #d4dced; text-decoration: none; font-size: 15px; white-space: nowrap; }
