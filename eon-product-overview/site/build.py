@@ -66,7 +66,7 @@ def shell(filename, title, body):
 <meta name="robots" content="noindex, nofollow" />
 <title>{e(title)} · EON Reality</title>
 <link rel="stylesheet" href="../assets/site.css" />
-<link rel="stylesheet" href="refresh.css" />
+<link rel="stylesheet" href="refresh.css?v=people" />
 </head>
 <body class="home customer-ready">
 {header(filename)}
