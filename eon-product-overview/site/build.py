@@ -50,6 +50,9 @@ def footer():
     <a href="{CAMPUS}">Global Virtual Campus</a>
     <a href="{LONG}/">The long platform</a>
     <a href="contact.html">Contact</a>
+    <a href="demo.html">Demo</a>
+    <a href="news.html">News</a>
+    <a href="sign-in.html">Sign in</a>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
@@ -65,8 +68,10 @@ def shell(filename, title, body):
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
 <title>{e(title)} · EON Reality</title>
+<link rel="icon" href="favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="stylesheet" href="../assets/site.css" />
-<link rel="stylesheet" href="refresh.css?v=people" />
+<link rel="stylesheet" href="refresh.css?v=finish" />
 </head>
 <body class="home customer-ready">
 {header(filename)}
@@ -222,6 +227,36 @@ DOING = {
     "sentient": "Return to a subject as a world after the session ends, so the learning stays available.",
 }
 
+# One more paragraph, taken from a page that is already public. No new claims.
+MORE = {
+    "universal": "The public customer page says five connected modules turn equipment, references, and places into one starting point a learner can explore.",
+    "components": "The public customer page calls this a library of objects that explain themselves.",
+    "mirror": "The public customer page starts from reference images and keeps a model that can still be edited.",
+    "studio": "The public customer page says every part is reviewed before learners rely on it.",
+    "model": "The public customer page keeps the same promise: open the object, and understand the system.",
+    "worlds": "The public customer page keeps the same promise: start with a place, and discover it through a mission.",
+    "xr": "The public customer page says a learner meets a subject in space, explores its parts, and can return to the explanation.",
+    "live": "The public customer page says Live makes the link between an action, the state of the equipment, and the next safe decision visible.",
+    "tacit": "The public customer page says the exact words stay, and a second person checks the claim before it is reused.",
+    "genesis": "The public customer page says a learner practises from reviewed curriculum, source material, or a procedure, and then the decisions are reviewed.",
+    "controlroom": "The public customer page connects operator, field, command, and instructor views in one virtual operation.",
+    "situation": "The public customer page says a team examines an incident, weighs the evidence, and discusses the decision before the pressure is real.",
+    "creator": "The public customer page says reviewed courses, scenarios, and learning experiences sit in a space shaped around the institution.",
+    "brainy": "The public customer page says the rehearsal is with people who respond, and then you review how the person listened, explained, and handled competing concerns.",
+    "permit": "The public customer page connects the job, its controls, and the supporting evidence. Authorised people remain in charge.",
+    "field": "The public customer page follows a guided task from preparation and training into field use, and into how that task is reviewed.",
+    "edge": "The public customer page shows a prepared example of step-by-step assistance when the cloud connection is gone.",
+    "assess": "The public customer page puts the briefing, the recorded task, and the result together so an assessor can review the evidence.",
+    "compound": "The public customer page looks at the difference between the intended task and what happened before the guidance is changed.",
+    "distillery": "The public customer page turns a reviewed lesson into a package only after accountable people review it, test it, and release it.",
+    "competence": "The public customer page connects a task, an assessment, and an accountable decision in a record people can inspect.",
+    "control": "The public customer page says a team finds the activity, reviews progress, and opens the evidence behind a result.",
+    "career": "The published Career Compass page describes a path in this order: look at current skills, name a direction, see the gap, gather the learning, practise, keep a record of that learning, and match the skills to work. That page remains the full story.",
+    "venture": "The published Venture Builder page describes five steps: find a local problem worth solving, start from a prepared pattern for that kind of problem, check that the idea can work, repeat what works in a similar place, and offer it where people can use it. A person does not need to be a programmer to start. That page remains the full story.",
+    "fluency": "The published campus page describes 100 courses in five groups, from someone who is just starting to someone who can lead and build with these tools. Each group has something to learn, something to practise, and a result the person can show. That page remains the full story.",
+    "sentient": "The published Sentient Worlds page describes four steps: a short film of the topic, a conversation that stays with the topic, a place you can walk through in a browser, and the same place on a phone. That page remains the full story.",
+}
+
 SHELF_IMAGE = {
     "learn": "images/learn-shelf.jpg?v=daylight",
     "train": "images/train-shelf.jpg?v=daylight",
@@ -304,6 +339,15 @@ def build_home():
   <a class="door" href="perform.html"><img src="images/perform-shelf.jpg?v=daylight" alt="" /><span><strong>Perform</strong><em>Do the work, then show the evidence.</em></span></a>
   <a class="door" href="achieve.html"><img src="images/achieve-shelf.jpg?v=daylight" alt="" /><span><strong>Achieve</strong><em>Get the job, and secure it.</em></span></a>
 </div>
+<section class="plain">
+  <p class="eyebrow">FROM THE CURRENT SITE</p>
+  <h2>News that is already public.</h2>
+  <p>This draft links to posts that are already on eonreality.com. It does not replace that site.</p>
+  <p class="actions"><a class="button secondary" href="news.html">See the news</a></p>
+</section>
+<div class="news-list">
+  <a class="news-row" href="https://eonreality.com/eon-launches-demo-clinics-to-showcase-the-full-one-platform-portfolio/"><strong>8 Oct 2026. Demo Clinics for the whole platform.</strong><em>The opening session was led on 9 Oct 2026. Weekly clinics follow.</em></a>
+</div>
 <section class="plain start-here">
   <p class="eyebrow">START HERE</p>
   <h2>The next step is a conversation.</h2>
@@ -374,12 +418,14 @@ def build_products():
         else:
             action = f'<a class="button primary" href="{LONG}/products/{product["long"]}.html">Open the long story</a>'
         doing = DOING[product["slug"]]
+        more = MORE[product["slug"]]
         body = f'''
 <section class="product-hero"><img src="{image}" alt="" /><div class="veil"></div>
   <div class="copy"><p class="eyebrow">{e(product["shelf_name"].upper())}</p><h1>{e(product["name"])}</h1>
   <p class="hero-description">{e(product["promise"])}</p></div>
 </section>
 <section class="product-body"><p>{e(product["body"])}</p>
+<p>{e(more)}</p>
 <p>What you can do here. {e(doing)}</p>
 <p class="actions">{action}<a class="button secondary" href="{product["shelf"]}.html">Back to {e(product["shelf_name"])}</a></p></section>
 '''
@@ -413,9 +459,52 @@ def build_public_pages():
   <p class="eyebrow">CONTACT</p>
   <h1>Request a conversation.</h1>
   <p>We listen first. If you are with a university, a school, or a public institution, ask for a conversation about education or about government. We start from the need.</p>
-  <p>Email <a href="mailto:dan@eonreality.com">dan@eonreality.com</a>. Include the institution, the need, and whether the conversation is for education or for government.</p>
-  <p>The email is the request. This draft does not publish a phone number, a postal address, or a form.</p>
-  <p class="actions"><a class="button primary" href="mailto:dan@eonreality.com">Email dan@eonreality.com</a><a class="button secondary" href="education.html">Education</a><a class="button secondary" href="government.html">Government</a></p>
+  <p>For this draft, email <a href="mailto:dan@eonreality.com">dan@eonreality.com</a>. Include the institution, the need, and whether the conversation is for education or for government.</p>
+  <p>The office details below are copied from the current public website. The contact page lists Suite 173. The privacy policy lists Suite 110 at the same street. Both are shown until the suite is confirmed.</p>
+</section>
+<div class="fact-grid">
+  <article class="fact"><strong>Email</strong><p>General: <a href="mailto:info@eonreality.com">info@eonreality.com</a><br/>Sales: <a href="mailto:sales@eonreality.com">sales@eonreality.com</a><br/>This draft: <a href="mailto:dan@eonreality.com">dan@eonreality.com</a></p></article>
+  <article class="fact"><strong>Phone and hours</strong><p><a href="tel:+19494602000">+1 (949) 460-2000</a><br/>Monday to Friday, 9am to 5pm PT</p></article>
+  <article class="fact"><strong>Address on the contact page</strong><p>18 Technology Drive, Suite 173<br/>Irvine, CA 92618</p></article>
+  <article class="fact"><strong>Address on the privacy policy</strong><p>18 Technology Drive, Suite 110<br/>Irvine, CA 92618<br/>Also listed there: <a href="mailto:contact@eonreality.com">contact@eonreality.com</a> and <a href="mailto:privacy@eonreality.com">privacy@eonreality.com</a></p></article>
+</div>
+<section class="plain">
+  <p class="actions"><a class="button primary" href="mailto:dan@eonreality.com">Email dan@eonreality.com</a><a class="button secondary" href="https://eonreality.com/connect-with-us/">Open the current contact page</a><a class="button secondary" href="demo.html">Request a demo</a></p>
+</section>
+''')
+    shell("demo.html", "Demo", '''
+<section class="plain">
+  <p class="eyebrow">DEMO</p>
+  <h1>See it on the current website.</h1>
+  <p>This draft does not host the demo form. The button below opens the published demo page on eonreality.com.</p>
+  <p>That page offers two paths. A shorter discovery conversation. A longer hands-on session that uses material from the institution.</p>
+  <p>There is also a Demo Clinic series. The opening session was Friday 9 Oct 2026 at 11:30 CEST. Weekly clinics were planned from 15 Oct 2026. The clinic page is where the time and the registration live.</p>
+  <p class="actions"><a class="button primary" href="https://eonreality.com/schedule-a-free-demo/">Open the published demo page</a><a class="button secondary" href="https://eonreality.com/eon-demo-clinic/">Open the Demo Clinic</a><a class="button secondary" href="news.html">Read the 8 Oct announcement</a></p>
+</section>
+''')
+    shell("news.html", "News", '''
+<section class="plain">
+  <p class="eyebrow">NEWS</p>
+  <h1>Posts that are already public.</h1>
+  <p>These links go to eonreality.com. This draft does not add new posts, and it does not replace the current site.</p>
+</section>
+<div class="news-list">
+  <a class="news-row" href="https://eonreality.com/eon-launches-demo-clinics-to-showcase-the-full-one-platform-portfolio/"><strong>8 Oct 2026. EON launches Demo Clinics.</strong><em>A series to show the whole platform. Dan Lejerskar led the opening session on 9 Oct 2026. Weekly product clinics were planned after that.</em></a>
+  <a class="news-row" href="https://eonreality.com/eon-demo-clinic/"><strong>Demo Clinic page.</strong><em>The place to see the series and the registration. Opening time listed there: Friday 9 Oct 2026, 11:30 CEST.</em></a>
+</div>
+<section class="plain">
+  <p>More news stays on the current website.</p>
+  <p class="actions"><a class="button primary" href="https://eonreality.com/">Open eonreality.com</a><a class="button secondary" href="demo.html">Request a demo</a></p>
+</section>
+''')
+    shell("sign-in.html", "Sign in", '''
+<section class="plain">
+  <p class="eyebrow">SIGN IN</p>
+  <h1>Use the published sign-in pages.</h1>
+  <p>This draft does not ask for a password. The current website points people to these two places.</p>
+  <p class="actions"><a class="button primary" href="https://eon-xr.com/">Open eon-xr.com</a><a class="button secondary" href="https://core.eon-xr.com/">Open core.eon-xr.com</a></p>
+  <p>If you are not sure which one you need, start with a conversation instead of guessing.</p>
+  <p class="actions"><a class="button secondary" href="contact.html">Request a conversation</a></p>
 </section>
 ''')
     shell("about.html", "About", '''
@@ -451,7 +540,7 @@ def build_public_pages():
 
 
 def main():
-    missing = [slug for slug in (p["slug"] for p in PRODUCTS) if slug not in DOING]
+    missing = [slug for slug in (p["slug"] for p in PRODUCTS) if slug not in DOING or slug not in MORE]
     if missing:
         raise SystemExit(f"missing doing text: {missing}")
     build_home()
@@ -470,6 +559,9 @@ def main():
         "platform.html",
         "pricing.html",
         "contact.html",
+        "demo.html",
+        "news.html",
+        "sign-in.html",
         "about.html",
         "privacy.html",
         "terms.html",
