@@ -29,11 +29,13 @@ def header(active):
         current = ' aria-current="page"' if href == active else ""
         links.append(f'<a href="{href}"{current}>{label}</a>')
     contact_current = ' aria-current="page"' if active == "contact.html" else ""
+    video_current = ' aria-current="page"' if active == "videos.html" else ""
     return f'''<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <a class="wordmark brand-logo" href="index.html" aria-label="EON Reality home"><img src="{LOGO}" alt="EON Reality" /></a>
   <nav aria-label="Primary">{''.join(links)}</nav>
   <div class="header-actions">
+    <a class="header-contact" href="videos.html"{video_current}>See it in action</a>
     <a class="header-contact" href="contact.html"{contact_current}>Contact</a>
     <a class="header-action" href="platform.html">One platform <span>↗</span></a>
   </div>
@@ -51,6 +53,7 @@ def footer():
     <a href="{LONG}/">The long platform</a>
     <a href="contact.html">Contact</a>
     <a href="demo.html">Demo</a>
+    <a href="videos.html">See it in action</a>
     <a href="news.html">News</a>
     <a href="partners.html">Partners</a>
     <a href="sign-in.html">Sign in</a>
@@ -74,7 +77,7 @@ def shell(filename, title, body):
 <link rel="icon" href="favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="stylesheet" href="../assets/site.css" />
-<link rel="stylesheet" href="refresh.css?v=finish" />
+<link rel="stylesheet" href="refresh.css?v=prices" />
 </head>
 <body class="home customer-ready">
 {header(filename)}
@@ -313,7 +316,7 @@ def build_home():
     <h1>From the jobs of the <em>future.</em><br/>To the education of <em>today.</em></h1>
     <h2>Knowledge. Experience. Practice. Capability.</h2>
     <p class="hero-description">Connect the needs of employers and communities with learning people can see, explore, practise and demonstrate.</p>
-    <div class="actions"><a class="button primary" href="education.html">Explore education <span>↓</span></a><a class="button secondary" href="learn.html">Discover the products <span>↗</span></a></div>
+    <div class="actions"><a class="button primary" href="education.html">Explore education <span>↓</span></a><a class="button secondary" href="videos.html">See the platform in action</a><a class="button secondary" href="learn.html">Discover the products <span>↗</span></a></div>
   </div>
   <div class="hero-caption"><span>IMAGINE THE EXPERIENCE</span><p>A campus where knowledge becomes capability.</p></div>
 </section>
@@ -419,6 +422,101 @@ def build_shelves():
         shell(f"{key}.html", name, body)
 
 
+# Short videos from the EON One Platform set, 9 Oct 2026. Each link opens YouTube.
+VIDEOS = {
+    "universal": [("EON Universal for oil and gas", "https://www.youtube.com/watch?v=brsEVDrs9FM")],
+    "components": [("3D Components", "https://www.youtube.com/watch?v=-Ku1dPJy8ww")],
+    "mirror": [("Mirror Direct", "https://www.youtube.com/watch?v=k0Q8GfVbgWc")],
+    "studio": [("Mirror Studio", "https://www.youtube.com/watch?v=BN9_NSrLzOw")],
+    "model": [("Model Inside", "https://www.youtube.com/watch?v=MxYWI8QBcUY")],
+    "worlds": [("Worlds", "https://www.youtube.com/watch?v=QJ14i1hWxaU")],
+    "xr": [
+        ("The next generation of EON-XR simulation", "https://www.youtube.com/watch?v=e1c9vY5SQCU"),
+        ("Hard skills", "https://www.youtube.com/watch?v=n306ah2OLPw"),
+        ("Soft skills, narrated", "https://www.youtube.com/watch?v=xoAUYj_dC0Y"),
+    ],
+    "live": [
+        ("EON Live", "https://www.youtube.com/watch?v=wxszqLr79Eo"),
+        ("EON Live across oil and gas machines", "https://www.youtube.com/watch?v=MXFcREgbmpM"),
+    ],
+    "tacit": [
+        ("Expert conversation", "https://www.youtube.com/watch?v=hOE_aL7J9Qg"),
+        ("Walkthrough", "https://www.youtube.com/watch?v=ZcEasE9K2Og"),
+    ],
+    "genesis": [
+        ("Genesis 3 live", "https://www.youtube.com/watch?v=xHmOBSw-bog"),
+        ("A phone walkthrough becomes training", "https://www.youtube.com/watch?v=VJP2gw8tcdk"),
+        ("Creation exercise one", "https://www.youtube.com/watch?v=7fe5b9vzrLA"),
+        ("Creation exercise two", "https://www.youtube.com/watch?v=E5WtDZ-T3-w"),
+        ("Genesis on Meta Quest", "https://www.youtube.com/watch?v=7TYEewXy18k"),
+    ],
+    "controlroom": [
+        ("One operation. Every role connected.", "https://www.youtube.com/watch?v=POkUOq1V0Iw"),
+        ("Connecting the simulation to the people doing the work", "https://www.youtube.com/watch?v=ZesPHeePwCI"),
+    ],
+    "situation": [
+        ("120 real industrial emergencies", "https://www.youtube.com/watch?v=H0QFsCAhDsU"),
+        ("Situation Room and custom creation", "https://www.youtube.com/watch?v=XYaaKEpbdi8"),
+    ],
+    "creator": [("Custom Virtual Builder", "https://www.youtube.com/watch?v=vZcywf-pBHk")],
+    "brainy": [("Brainy soft skills", "https://www.youtube.com/watch?v=Z0gj7metqts")],
+    "permit": [
+        ("Permit IQ for oil and gas", "https://www.youtube.com/watch?v=GqoM7ETH2IM"),
+        ("Permit IQ demo", "https://www.youtube.com/watch?v=CWbBAZcSLUw"),
+    ],
+    "field": [
+        ("Recognition, guidance and assistance", "https://www.youtube.com/watch?v=TvTLAED_wpM"),
+        ("Practice anywhere", "https://www.youtube.com/watch?v=OPzODykNAsI"),
+        ("Hazard Hunt, extended", "https://www.youtube.com/watch?v=vqR2sjBtHHM"),
+        ("AR hardware strategy", "https://www.youtube.com/watch?v=VNFmrGzaN8I"),
+    ],
+    "edge": [("Field IQ Edge", "https://www.youtube.com/watch?v=7lnGT6dN_1o")],
+    "assess": [
+        ("Step by step creation", "https://www.youtube.com/watch?v=0i6R0C1uNio"),
+        ("Verifiable safety evidence", "https://www.youtube.com/watch?v=o8OuQw6z9bE"),
+        ("Assess IQ 2.0", "https://www.youtube.com/watch?v=eltdEj64x0c"),
+    ],
+    "compound": [
+        ("Knowledge that gets smarter every shift", "https://www.youtube.com/watch?v=nSX2CiKcNeM"),
+        ("Walkthrough", "https://www.youtube.com/watch?v=8WZr5nDasK8"),
+    ],
+    "distillery": [
+        ("Distilling industrial wisdom", "https://www.youtube.com/watch?v=Wo1_XR5vvvU"),
+        ("Walkthrough", "https://www.youtube.com/watch?v=87c_ch17v0Q"),
+    ],
+    "competence": [("Competence IQ", "https://www.youtube.com/watch?v=X0aEyqYXt48")],
+    "control": [
+        ("People, learning, results and evidence", "https://www.youtube.com/watch?v=IVe3-QiwR4U"),
+        ("Admin dashboard", "https://www.youtube.com/watch?v=4Xe4v0ZgiWs"),
+    ],
+}
+
+# Published per-user monthly prices from eonreality.com/product-pricing/ on 12 Oct 2026.
+PRICES = {
+    "xr": "Education $36. Enterprise $124. Per user per month.",
+    "genesis": "Education $200. Enterprise $350. Per user per month.",
+    "situation": "Education $280. Enterprise $450. Per user per month.",
+    "creator": "Same published line as Situation Room.",
+    "brainy": "Education $120. Enterprise $200. Per user per month.",
+    "assess": "Education $85. Enterprise $150. Per user per month.",
+    "field": "Education $170. Enterprise $300. Per user per month.",
+    "career": "Education $80. Enterprise $150. Per user per month.",
+    "venture": "Education $80. Enterprise $150. Per user per month.",
+    "fluency": "Education $80. Enterprise $150. Per user per month.",
+    "sentient": "Education $200. Enterprise $350. Per user per month.",
+}
+
+
+def video_buttons(slug):
+    clips = VIDEOS.get(slug, [])
+    if not clips:
+        return ""
+    buttons = "".join(
+        f'<a class="button secondary" href="{url}">{e(label)}</a>' for label, url in clips
+    )
+    return f'<p>Short videos from the One Platform set. Each one opens on YouTube.</p><p class="actions">{buttons}</p>'
+
+
 def build_products():
     for product in PRODUCTS:
         image = image_for(product)
@@ -436,9 +534,41 @@ def build_products():
 <section class="product-body"><p>{e(product["body"])}</p>
 <p>{e(more)}</p>
 <p>What you can do here. {e(doing)}</p>
-<p class="actions">{action}<a class="button secondary" href="{product["shelf"]}.html">Back to {e(product["shelf_name"])}</a></p></section>
+{video_buttons(product["slug"])}
+<p class="actions">{action}<a class="button secondary" href="{product["shelf"]}.html">Back to {e(product["shelf_name"])}</a><a class="button secondary" href="videos.html">All the videos</a></p></section>
 '''
         shell(f'{product["slug"]}.html', product["name"], body)
+
+
+def build_videos():
+    groups = []
+    for key in ("learn", "train", "perform", "achieve"):
+        name = SHELVES[key][0]
+        rows = []
+        for product in PRODUCTS:
+            if product["shelf"] != key:
+                continue
+            clips = VIDEOS.get(product["slug"], [])
+            if clips:
+                links = "".join(
+                    f'<a class="news-row" href="{url}"><strong>{e(product["name"])}</strong><em>{e(label)}</em></a>'
+                    for label, url in clips
+                )
+                rows.append(links)
+            else:
+                rows.append(
+                    f'<a class="news-row" href="{product["slug"]}.html"><strong>{e(product["name"])}</strong><em>No short video in the One Platform set yet.</em></a>'
+                )
+        groups.append(f'<section class="plain"><h2>{name}</h2></section><div class="news-list">{"".join(rows)}</div>')
+    body = '''
+<section class="plain">
+  <p class="eyebrow">SEE THE PLATFORM IN ACTION</p>
+  <h1>A short video for each product.</h1>
+  <p>These are the videos from the EON One Platform set. Each button opens YouTube. This page does not host the video file, and it does not add a new film.</p>
+  <p>Four Achieve products are not in that set yet: Career Compass, Venture Builder, AI Fluency, and Sentient Worlds.</p>
+</section>
+''' + "".join(groups)
+    shell("videos.html", "See the platform in action", body)
 
 
 def build_pricing():
@@ -449,15 +579,20 @@ def build_pricing():
         for product in PRODUCTS:
             if product["shelf"] != key:
                 continue
+            price = PRICES.get(product["slug"], "Scoped with the institution")
             rows.append(
-                f'<a class="price-row" href="{product["slug"]}.html"><strong>{e(product["name"])}</strong><span>Scoped with the institution</span></a>'
+                f'<a class="price-row" href="{product["slug"]}.html"><strong>{e(product["name"])}</strong><span>{e(price)}</span></a>'
             )
         groups.append(f'<section class="plain"><h2>{name}</h2></section><div class="price-list">{"".join(rows)}</div>')
     body = '''
-<section class="plain"><p class="eyebrow">PRICING</p><h1>Grouped the same way as the shelves.</h1>
-<p>Learn, Train, Perform, and Achieve are the only groups. A single public price list is not invented here. Each engagement is scoped with the institution after the need is clear. The descriptions on these pages are the ones the price must match.</p>
-<p>To ask for that conversation, include the institution, the need, and whether it is education or government.</p>
-<p class="actions"><a class="button primary" href="contact.html">Request a conversation</a></p></section>
+<section class="plain"><p class="eyebrow">PRICING</p><h1>The prices already on the current website.</h1>
+<p>Learn, Train, Perform, and Achieve are the only groups. The numbers below are copied from the published price page. They are per user per month. A row that says scoped with the institution has no separate line on that page.</p>
+<p>The current homepage starts EON Classic at $36 per user per month for education, and EON Spatial at $80. The rows below are the product lines behind those starting points.</p>
+<p>EON XR Infinite uses the published EON XR price. The same page lists EON AI at the same numbers, and says both now live inside EON XR Infinite at the same subscription. The classic page lists the two together from $72 per user per month for education.</p>
+<p>Genesis 3 uses the published price of Genesis Trainer and of Genesis Simulator. That page says both are now Genesis 3 at the same subscription.</p>
+<p>Situation Room uses the published Custom Virtual Builder price. That page says the product is now also available as Situation Room. Creator uses that same line. It does not add a second price.</p>
+<p>EON AI Ventures shows the same numbers for EON XR, EON AI, Sentient Worlds, and the creation engine. It also offers a university a percent of educational revenue: 1 percent, 2 percent, or 2.5 percent, depending on the set. This page keeps the per-user prices from eonreality.com.</p>
+<p class="actions"><a class="button primary" href="https://eonreality.com/product-pricing/">Open the published price page</a><a class="button secondary" href="https://eonreality.com/eon-classic/">Open the classic price note</a><a class="button secondary" href="https://eonaiventures.com/product-pricing/">Compare with EON AI Ventures</a><a class="button secondary" href="contact.html">Request a conversation</a></p></section>
 ''' + "".join(groups)
     shell("pricing.html", "Pricing", body)
 
@@ -569,6 +704,7 @@ def main():
     build_story_pages()
     build_shelves()
     build_products()
+    build_videos()
     build_pricing()
     build_public_pages()
     pages = list(ROOT.glob("*.html"))
@@ -582,6 +718,7 @@ def main():
         "pricing.html",
         "contact.html",
         "demo.html",
+        "videos.html",
         "news.html",
         "partners.html",
         "sign-in.html",
@@ -611,6 +748,16 @@ def main():
         raise SystemExit("terms link missing")
     if "https://eonreality.com/value-added-resellers/" not in partners or "@" in partners:
         raise SystemExit("partners page check failed")
+    videos = (ROOT / "videos.html").read_text()
+    pricing = (ROOT / "pricing.html").read_text()
+    if "https://www.youtube.com/watch?v=xHmOBSw-bog" not in videos:
+        raise SystemExit("video link missing")
+    if "No short video in the One Platform set yet." not in videos:
+        raise SystemExit("missing video note")
+    if "https://eonreality.com/product-pricing/" not in pricing or "$36" not in pricing:
+        raise SystemExit("price link missing")
+    if "https://www.youtube.com/watch?v=xHmOBSw-bog" not in (ROOT / "genesis.html").read_text():
+        raise SystemExit("product video missing")
     allowed_hash = 'href="#main"'
     if text.replace(allowed_hash, "").find('href="#') != -1:
         raise SystemExit("hash fragment")

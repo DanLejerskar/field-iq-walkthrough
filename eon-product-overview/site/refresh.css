@@ -75,7 +75,7 @@ a.card em { display: block; margin-top: 6px; font-style: normal; color: #aebbd2;
 .site-footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
 .site-footer a { color: #d4dced; text-decoration: none; font-size: 14px; }
 .price-list { padding: 0 4.8vw 28px; }
-a.price-row { display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-bottom: 1px solid #29364e; text-decoration: none; color: #d4dced; }
+a.price-row { display: flex; justify-content: space-between; gap: 12px 18px; flex-wrap: wrap; padding: 14px 0; border-bottom: 1px solid #29364e; text-decoration: none; color: #d4dced; }
 a.price-row strong { color: #f4f6ff; font-weight: 600; }
 a.price-row span { color: #aebbd2; }
 .fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 0 4.8vw 28px; }
