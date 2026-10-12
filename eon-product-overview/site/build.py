@@ -52,10 +52,13 @@ def footer():
     <a href="contact.html">Contact</a>
     <a href="demo.html">Demo</a>
     <a href="news.html">News</a>
+    <a href="partners.html">Partners</a>
     <a href="sign-in.html">Sign in</a>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
+    <a href="https://eonreality.com/?lang=fr">French</a>
+    <a href="https://eonreality.com/?lang=zh-hans">Chinese</a>
   </nav>
 </footer>'''
 
@@ -348,6 +351,12 @@ def build_home():
 <div class="news-list">
   <a class="news-row" href="https://eonreality.com/eon-launches-demo-clinics-to-showcase-the-full-one-platform-portfolio/"><strong>8 Oct 2026. Demo Clinics for the whole platform.</strong><em>The opening session was led on 9 Oct 2026. Weekly clinics follow.</em></a>
 </div>
+<section class="plain">
+  <p class="eyebrow">STILL ON THE CURRENT SITE</p>
+  <h2>Partners, French, and Chinese.</h2>
+  <p>The partner list stays on eonreality.com. This draft does not copy the names or the contact details. The current website is also published in French and in Simplified Chinese. This draft is English only. Those buttons open the current site. They are not a translation of these pages.</p>
+  <p class="actions"><a class="button secondary" href="partners.html">Partners</a><a class="button secondary" href="https://eonreality.com/?lang=fr">French on the current site</a><a class="button secondary" href="https://eonreality.com/?lang=zh-hans">Chinese on the current site</a></p>
+</section>
 <section class="plain start-here">
   <p class="eyebrow">START HERE</p>
   <h2>The next step is a conversation.</h2>
@@ -525,6 +534,8 @@ def build_public_pages():
   <p>These pages are a draft reading copy. They do not ask you to create an account, and they do not include a form or a tracker. If you email dan@eonreality.com, that message is ordinary email. It leaves this site.</p>
   <p>The pages ask search engines not to index this draft. Wait to send confidential material until the institution has agreed what may be shared.</p>
   <p>Counsel needs to review this draft before anyone treats it as policy. It cites no statute.</p>
+  <p>The privacy policy that is already public stays on the current website. This draft does not replace it, and it does not copy that policy onto this page.</p>
+  <p class="actions"><a class="button primary" href="https://eonreality.com/privacy-policy/">Open the published privacy policy</a></p>
 </section>
 ''')
     shell("terms.html", "Terms", '''
@@ -535,6 +546,17 @@ def build_public_pages():
   <p>The pages explain how EON Reality describes education and government. They are a draft for review. They are not an offer, and they are not a promise that a product will be delivered in a particular form.</p>
   <p>Pricing on this site says each engagement is scoped with the institution. No public price is set here. Product names and short descriptions are for orientation. The longer review of the platform lives on its own site.</p>
   <p>Counsel needs to replace this draft before anyone relies on it. It cites no statute.</p>
+  <p>The terms of use that are already public stay on the current website. This draft does not replace them, and it does not copy those terms onto this page.</p>
+  <p class="actions"><a class="button primary" href="https://eonreality.com/terms-of-use/">Open the published terms</a></p>
+</section>
+''')
+    shell("partners.html", "Partners", '''
+<section class="plain">
+  <p class="eyebrow">PARTNERS</p>
+  <h1>The partner list stays on the current website.</h1>
+  <p>EON Reality works with partners in many countries. The published list, including how to reach each partner, stays on eonreality.com.</p>
+  <p>This draft does not copy partner names, phone numbers, or email addresses. Open the current page to see them.</p>
+  <p class="actions"><a class="button primary" href="https://eonreality.com/value-added-resellers/">Open the partner list</a><a class="button secondary" href="contact.html">Request a conversation</a></p>
 </section>
 ''')
 
@@ -551,7 +573,7 @@ def main():
     build_public_pages()
     pages = list(ROOT.glob("*.html"))
     text = "\n".join(p.read_text() for p in pages)
-    if "—" in text or "Assist IQ" in text:
+    if "—" in text or "–" in text or "Assist IQ" in text:
         raise SystemExit("copy check failed")
     footer_html = (ROOT / "index.html").read_text().split("<footer", 1)[1]
     for href in (
@@ -561,10 +583,13 @@ def main():
         "contact.html",
         "demo.html",
         "news.html",
+        "partners.html",
         "sign-in.html",
         "about.html",
         "privacy.html",
         "terms.html",
+        "https://eonreality.com/?lang=fr",
+        "https://eonreality.com/?lang=zh-hans",
         CAMPUS,
         f"{LONG}/",
     ):
@@ -577,6 +602,15 @@ def main():
             raise SystemExit(f"draft marking missing {name}")
     if "mailto:dan@eonreality.com" not in (ROOT / "contact.html").read_text():
         raise SystemExit("contact mailto missing")
+    privacy = (ROOT / "privacy.html").read_text()
+    terms = (ROOT / "terms.html").read_text()
+    partners = (ROOT / "partners.html").read_text()
+    if "https://eonreality.com/privacy-policy/" not in privacy:
+        raise SystemExit("privacy link missing")
+    if "https://eonreality.com/terms-of-use/" not in terms:
+        raise SystemExit("terms link missing")
+    if "https://eonreality.com/value-added-resellers/" not in partners or "@" in partners:
+        raise SystemExit("partners page check failed")
     allowed_hash = 'href="#main"'
     if text.replace(allowed_hash, "").find('href="#') != -1:
         raise SystemExit("hash fragment")
