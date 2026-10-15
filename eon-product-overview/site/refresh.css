@@ -1,4 +1,5 @@
-.brand-logo img { height: 42px; width: auto; display: block; }
+.brand-logo { flex: 0 0 auto; }
+.brand-logo img { height: 56px; width: auto; display: block; }
 .site-header nav a[aria-current="page"] { color: #fff; }
 .band { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; padding: 12px 4.8vw 72px; }
 .band.reverse { grid-template-columns: .95fr 1.05fr; }
@@ -71,7 +72,7 @@ a.card em { display: block; margin-top: 6px; font-style: normal; color: #aebbd2;
 .product-body .actions, .plain .actions { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px; }
 .group-label { margin: 0 4.8vw; color: #9eb2d5; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
 .site-footer { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; padding: 28px 4.8vw 48px; border-top: 1px solid #29364e; }
-.site-footer img { height: 32px; width: auto; }
+.site-footer img { height: 44px; width: auto; }
 .site-footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
 .site-footer a { color: #d4dced; text-decoration: none; font-size: 14px; }
 .price-list { padding: 0 4.8vw 28px; }
@@ -109,6 +110,8 @@ a.news-row em { display: block; margin-top: 6px; font-style: normal; color: #aeb
   .shelf-hero, .product-hero { min-height: 520px; }
 }
 @media (max-width: 600px) {
+  .brand-logo img { height: 44px; }
+  .site-footer img { height: 36px; }
   /* Photo on top. Copy sits on the dark background so the headline stays readable. */
   .shelf-hero, .product-hero { min-height: 0; display: flex; flex-direction: column; align-items: stretch; background: #070c19; }
   .shelf-hero > img, .product-hero > img { position: relative; inset: auto; top: auto; right: auto; bottom: auto; left: auto; width: 100%; height: auto; max-width: 100%; aspect-ratio: 16 / 9; object-position: center center; }
