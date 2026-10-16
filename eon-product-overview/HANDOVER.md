@@ -68,6 +68,34 @@ https://htmlpreview.github.io/?https://raw.githubusercontent.com/DanLejerskar/fi
 
 Leave https://field-iq-walkthrough.vercel.app alone. That is the Field IQ walkthrough. This draft does not use that project.
 
+## 2b. WordPress content for the marketing team
+
+The live site is WordPress with Elementor Pro. The header, the menu, the logo, and the footer already live there. Do not paste them again.
+
+The folder `eon-product-overview/wordpress/` has the page content only. Each page is two files with the same name: one HTML file and one CSS file. The HTML starts at the hero and ends at the last content section. There is no JavaScript. These pages do not need a script.
+
+How to put one page onto eonreality.com:
+
+1. Open the matching WordPress page.
+2. Paste the HTML into an Elementor HTML widget in the content area. Leave the global header and footer where they are.
+3. Load the CSS file with the same name on that page only. Every rule is scoped to a class such as `.eon-reality-page--learn`, so it does not restyle the menu, the footer, or any other WordPress page.
+4. Do not add a second header, menu, logo bar, or footer.
+5. Do not replace Elementor forms, event registration, or the Radar CRM. These files contain no forms.
+
+Pictures load from https://eon-reality-website.vercel.app so they show before anyone uploads them to the media library. Links inside the content point at the current eonreality.com page when that page already exists.
+
+These five draft pages do not have a live address yet. Create the page in WordPress, then paste the file:
+
+| File | Address to create |
+| --- | --- |
+| story.html | https://eonreality.com/story/ |
+| platform.html | https://eonreality.com/one-platform/ |
+| news.html | https://eonreality.com/news/ |
+| sign-in.html | https://eonreality.com/sign-in/ |
+| about.html | https://eonreality.com/about/ |
+
+After a change to the draft, from `eon-product-overview/site/` run `python3 build.py`, then `python3 wordpress_export.py`. Both must exit 0.
+
 ## 3. How to see it, and how to publish a change
 
 Git is how you change the site. The steps in section 2a are enough.
@@ -410,6 +438,8 @@ Do not guess these.
 | eon-product-overview/site/refresh.css | Look that overrides site.css. |
 | eon-product-overview/assets/brand/eon-reality-logo-white.png | Official logo. |
 | eon-product-overview/site/images/ | Hero and card stills. |
+| eon-product-overview/site/wordpress_export.py | Builds the WordPress content files. Run it after build.py. |
+| eon-product-overview/wordpress/ | HTML and CSS for Elementor. No header, menu, logo bar, or footer. |
 | eon-product-overview/vercel.json | Sends `/` to the new site, and ignores builds from other branches. |
 
 Leave `.github/workflows/publish-overview.yml` unchanged. Leave the Vercel project `field-iq-walkthrough` unchanged.

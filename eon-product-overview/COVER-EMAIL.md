@@ -29,6 +29,8 @@ Start here, in this order:
 
 The same two notes are also saved as Word files next to them: HANDOVER.docx and COVER-EMAIL.docx.
 
+Marketing: use the wordpress folder in the same pack. Each page is content only, from the hero through the last section. Paste the HTML into the Elementor HTML widget. Load the CSS file with the same name on that page only. Do not add a header, a menu, a logo bar, or a footer. Elementor Pro already has those. Do not replace the existing forms, event registration, or the Radar CRM. HANDOVER.md section 2b has the steps.
+
 The site to open:
 
 https://eon-reality-website.vercel.app

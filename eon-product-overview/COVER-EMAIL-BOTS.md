@@ -5,7 +5,7 @@ Date: 16 Oct 2026
 Status: draft. Do not treat this file as a sent message.
 Dan adds Raul's email before anyone sends this. Brita's address on the 14 Oct and 15 Oct notes is brita@eonreality.com.
 
-To: Raul and Brita
+To: Raul, Brita, and the marketing team
 From: Dan Lejerskar
 Subject: Start from the HTML preview, then cross-check the live site with your agents
 
@@ -35,7 +35,9 @@ Hand your agent one file:
 
 eon-product-overview/HANDOVER.md
 
-The same note is HANDOVER.docx. Section 2a says Git is enough, and it has the logo steps. The longer cross-check is BOT-BRIEF-RAUL-BRITA.md if the agent needs the gap list.
+The same note is HANDOVER.docx. Section 2a says Git is enough, and it has the logo steps. Section 2b is for marketing. The longer cross-check is BOT-BRIEF-RAUL-BRITA.md if the agent needs the gap list.
+
+Marketing: the zip also has a wordpress folder. Each page is content only, from the hero through the last section. Paste the HTML into the Elementor HTML widget. Load the CSS file with the same name on that page only. Do not add a header, a menu, a logo bar, or a footer. Elementor Pro already has those. Do not replace the existing forms, event registration, or the Radar CRM. These files have none of that.
 
 What the agents do:
 
