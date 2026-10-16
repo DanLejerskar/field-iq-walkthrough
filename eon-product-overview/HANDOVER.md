@@ -78,6 +78,8 @@ To publish a change:
 4. If that deployment is Production, https://eon-reality-website.vercel.app already has it.
 5. If it is a Preview, promote that deployment to Production. Promote only inside `eon-reality-website`.
 
+A push of this branch creates a Preview, because the Vercel production branch is still `main`. The public address stays on the last Production deployment until you promote. If Promote is refused, open the project settings for `eon-reality-website` and set the Production Branch to `cursor/eon-product-overview-589c`. Do that only on this project.
+
 The project ignores a build from every other branch. A push to `main` must not replace this URL. `vercel.json` carries the same ignore rule.
 
 Do not create another Vercel project for this draft. Do not attach a custom domain. Do not point eonreality.com here until Dan says so.
