@@ -29,6 +29,8 @@ The live site to cross-check is https://eonreality.com/
 
 You do not need Vercel. The website is already in Git. Change a file, push the branch, and the HTML preview updates. The logo is one picture: eon-product-overview/assets/brand/eon-reality-logo-white.png. Replace that file. You do not open Vercel to do it. The logo that could not be changed before is on a different site, https://eon-education-government-review.vercel.app/. That site is not this folder.
 
+The long story is already linked. On Learn, open Universal, then Open the long story. That page is https://eon-education-government-review.vercel.app/products/universal.html. The other 21 long stories are listed in HANDOVER.md section 6a. Leave those pages where they are. This draft does not contain their source.
+
 Hand your agent one file:
 
 eon-product-overview/HANDOVER.md

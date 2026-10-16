@@ -202,7 +202,51 @@ Retired:
 
 - Assist IQ has no card, no price row, and no mention in generated HTML. The builder fails if that name appears.
 
-Other products link to the long platform at `https://eon-education-government-review.vercel.app/products/{slug}.html`, using the `long` field in `PRODUCTS`. Do not edit that long platform from this repo. Its source is not here.
+## 6a. Long story pages
+
+Each short product page has a button, Open the long story. That button leaves this draft and opens the longer page on the long platform.
+
+The path Dan named: open Learn, open Universal, then Open the long story.
+
+- Short page: `eon-product-overview/site/universal.html`
+- Long story: https://eon-education-government-review.vercel.app/products/universal.html
+
+The long platform home is https://eon-education-government-review.vercel.app/
+
+These 22 long stories are already live. The `long` field in `PRODUCTS` is the file name. Keep the button. Do not paste the long page into the short page. The source of the long platform is not in this repository, so do not try to edit those pages from this branch.
+
+Learn:
+
+- EON Universal: https://eon-education-government-review.vercel.app/products/universal.html
+- 3D Components: https://eon-education-government-review.vercel.app/products/components.html
+- Mirror Direct: https://eon-education-government-review.vercel.app/products/mirror.html
+- Mirror Studio: https://eon-education-government-review.vercel.app/products/studio.html
+- Model Inside: https://eon-education-government-review.vercel.app/products/model.html
+- Worlds: https://eon-education-government-review.vercel.app/products/worlds.html
+- EON XR Infinite: https://eon-education-government-review.vercel.app/products/xr.html
+- EON Live: https://eon-education-government-review.vercel.app/products/live.html
+- EON Tacit: https://eon-education-government-review.vercel.app/products/tacit.html
+
+Train:
+
+- Genesis 3: https://eon-education-government-review.vercel.app/products/genesis.html
+- EON Control Room: https://eon-education-government-review.vercel.app/products/controlroom.html
+- Situation Room: https://eon-education-government-review.vercel.app/products/situation.html
+- Situation Room Creator: https://eon-education-government-review.vercel.app/products/creator.html
+- Brainy Soft Skills: https://eon-education-government-review.vercel.app/products/brainy.html
+
+Perform:
+
+- Permit IQ: https://eon-education-government-review.vercel.app/products/permit.html
+- Field IQ: https://eon-education-government-review.vercel.app/products/field.html
+- Field IQ Edge: https://eon-education-government-review.vercel.app/products/edge.html
+- Assess IQ: https://eon-education-government-review.vercel.app/products/assess.html
+- Compound IQ: https://eon-education-government-review.vercel.app/products/compound.html
+- The Distillery: https://eon-education-government-review.vercel.app/products/distillery.html
+- Competence IQ: https://eon-education-government-review.vercel.app/products/competence.html
+- EON Control: https://eon-education-government-review.vercel.app/products/control.html
+
+Achieve does not use that folder. Those four buttons open the published pages already listed above: Career Compass, Venture Builder, AI Fluency, and Sentient Worlds. Checked 16 Oct 2026: those four names return a missing page under `/products/`.
 
 ## 7. Page list
 
@@ -361,7 +405,8 @@ Do not guess these.
 | --- | --- |
 | eon-product-overview/HANDOVER.md | This briefing. |
 | eon-product-overview/COVER-EMAIL.md | The note for the team. |
-| eon-product-overview/site/build.py | Pages, products, prices, videos, checks. |
+| eon-product-overview/site/build.py | Pages, products, prices, videos, checks. The long story button uses the `long` field. |
+| https://eon-education-government-review.vercel.app/products/universal.html | The long story for Universal. Section 6a lists the other 21. |
 | eon-product-overview/site/refresh.css | Look that overrides site.css. |
 | eon-product-overview/assets/brand/eon-reality-logo-white.png | Official logo. |
 | eon-product-overview/site/images/ | Hero and card stills. |
