@@ -30,7 +30,7 @@ Do not send people to those three files.
 - GitHub: https://github.com/DanLejerskar/field-iq-walkthrough
 - Branch: `cursor/eon-product-overview-589c`
 - Pull request: https://github.com/DanLejerskar/field-iq-walkthrough/pull/1
-- This handover was written on top of commit `2268659` (official wordmark in the header).
+- The header wordmark landed in commit `2268659`. Start from the latest commit on this branch. It includes this handover and the Vercel setup.
 
 Clone and use this branch:
 
@@ -40,28 +40,58 @@ cd field-iq-walkthrough
 git checkout cursor/eon-product-overview-589c
 ```
 
-## 3. How to see it
+## 3. How to see it, and how to publish a change
 
-Practice site:
+The site the team operates is a Vercel project named `eon-reality-website`. It is separate from Field IQ.
+
+Open this address:
+
+https://eon-reality-website.vercel.app
+
+`/` redirects to `/site/index.html`. That redirect is `eon-product-overview/vercel.json`. The folder-root `index.html` is the old menu, so the redirect keeps people on the new site.
+
+Vercel project:
+
+- Name: `eon-reality-website`
+- Project id: `prj_YJxRhF6AhVaT4VEJUERVuFedw1sb`
+- Dashboard: https://vercel.com/dans-projects-3b851cd9/eon-reality-website
+- GitHub repo: `DanLejerskar/field-iq-walkthrough`
+- Root directory: `eon-product-overview`
+- Framework: none. The HTML is already built. There is no install and no build command.
+- Deployment protection: off. No password and no Vercel login. The pages stay `noindex`.
+- Production deployment is the draft branch `cursor/eon-product-overview-589c`.
+
+Sibling pages are the same host with a different file name:
+
+- https://eon-reality-website.vercel.app/site/videos.html
+- https://eon-reality-website.vercel.app/site/pricing.html
+- https://eon-reality-website.vercel.app/site/contact.html
+- https://eon-reality-website.vercel.app/site/partners.html
+- https://eon-reality-website.vercel.app/site/privacy.html
+- https://eon-reality-website.vercel.app/site/terms.html
+
+To publish a change:
+
+1. Edit `site/build.py`. Run `python3 build.py` from `eon-product-overview/site/`. It must exit 0.
+2. Commit and push branch `cursor/eon-product-overview-589c`.
+3. Open the Vercel project above. Wait until the deployment of your commit says Ready.
+4. If that deployment is Production, https://eon-reality-website.vercel.app already has it.
+5. If it is a Preview, promote that deployment to Production. Promote only inside `eon-reality-website`.
+
+The project ignores a build from every other branch. A push to `main` must not replace this URL. `vercel.json` carries the same ignore rule.
+
+Do not create another Vercel project for this draft. Do not attach a custom domain. Do not point eonreality.com here until Dan says so.
+
+Leave the Field IQ walkthrough alone:
+
+- Project name: `field-iq-walkthrough`
+- Project id: `prj_qdgjljRTt1Aj40XCr8OoBqF2TMur`
+- Production URL: https://field-iq-walkthrough.vercel.app
+- That project is connected to the same GitHub repo. A push of this branch can create a preview deployment there. Leave that preview. Do not promote it. Production on that URL is the Field IQ walkthrough, and it must stay that way.
+
+Backup reading link, if Vercel is down:
 
 https://htmlpreview.github.io/?https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/site/index.html
-
-Other pages use the same folder. Change only the file name. Examples:
-
-- videos.html
-- pricing.html
-- contact.html
-- partners.html
-- privacy.html
-- terms.html
-
-Local preview, from `eon-product-overview/`:
-
-```bash
-python3 -m http.server 8765
-```
-
-Then open http://127.0.0.1:8765/site/index.html
 
 htmlpreview rules that already bit us:
 
@@ -71,9 +101,23 @@ htmlpreview rules that already bit us:
 - Do not pre-wrap links in an htmlpreview address. That double-wraps them.
 - After a push, GitHub raw files can take about a minute to refresh.
 
-GitHub Pages is not the reading link. The workflow `.github/workflows/publish-overview.yml` fails because Pages is not enabled. Dan said to pause that. Do not edit that workflow. Do not enable Pages.
+Local preview, from `eon-product-overview/`:
 
-Do not create a new Vercel project. Do not replace the Field IQ walkthrough at https://field-iq-walkthrough.vercel.app. This repository also holds that walkthrough. Leave it alone.
+```bash
+python3 -m http.server 8765
+```
+
+Then open http://127.0.0.1:8765/site/index.html
+
+What you need installed: Git, Python 3, and a browser. `build.py` uses the Python standard library only. There is no `package.json`, no env file, and no API key.
+
+GitHub:
+
+- The repo is public: https://github.com/DanLejerskar/field-iq-walkthrough
+- Default branch `main` is not this website. Do not merge until Dan has walked through the draft.
+- Pull request: https://github.com/DanLejerskar/field-iq-walkthrough/pull/1 (draft).
+- GitHub Pages is not the reading link. The workflow `.github/workflows/publish-overview.yml` fails because Pages is not enabled. Dan said to pause that. Do not edit that workflow. Do not enable Pages.
+- If you cannot see the Vercel project, ask Dan for an invite to that Vercel team. You can still clone the repo and read the site without one.
 
 ## 4. How to change the site
 
@@ -277,7 +321,7 @@ Do not guess these.
 - Fix a broken relative link, a wrong label, or a build failure.
 - Add a film only when Dan gives the URL.
 - Rebuild with `python3 build.py` after a change to `build.py`.
-- Keep the preview on the htmlpreview link above.
+- Push this branch, then confirm the deployment on project `eon-reality-website`. The public address is https://eon-reality-website.vercel.app
 
 ## 16. Files the agent should open first
 
@@ -289,5 +333,6 @@ Do not guess these.
 | eon-product-overview/site/refresh.css | Look that overrides site.css. |
 | eon-product-overview/assets/brand/eon-reality-logo-white.png | Official logo. |
 | eon-product-overview/site/images/ | Hero and card stills. |
+| eon-product-overview/vercel.json | Sends `/` to the new site, and ignores builds from other branches. |
 
-Leave `.github/workflows/publish-overview.yml` unchanged.
+Leave `.github/workflows/publish-overview.yml` unchanged. Leave the Vercel project `field-iq-walkthrough` unchanged.

@@ -25,12 +25,21 @@ Start here, in this order:
 
 The same two notes are also saved as Word files next to them: HANDOVER.docx and COVER-EMAIL.docx.
 
-Practice site, for reading in a browser:
+The site to open:
+
+https://eon-reality-website.vercel.app
+
+Videos: https://eon-reality-website.vercel.app/site/videos.html
+Prices: https://eon-reality-website.vercel.app/site/pricing.html
+
+Vercel project: eon-reality-website
+Dashboard: https://vercel.com/dans-projects-3b851cd9/eon-reality-website
+
+That project is the only Vercel project for this draft. Do not deploy it onto https://field-iq-walkthrough.vercel.app. That address is the Field IQ walkthrough and it stays as it is.
+
+If Vercel is down, the same pages are also here:
 
 https://htmlpreview.github.io/?https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/site/index.html
-
-Videos: change index.html to videos.html in that link.
-Prices: change index.html to pricing.html.
 
 If a page looks old, wait about a minute and refresh.
 
