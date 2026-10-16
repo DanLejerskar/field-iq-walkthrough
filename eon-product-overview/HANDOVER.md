@@ -7,6 +7,8 @@ Audience: the development and marketing team, and the agent that will finish thi
 
 Read this file before you edit anything. The cover email is COVER-EMAIL.md in this same folder.
 
+On 16 Oct 2026 Dan asked Raul and Brita to start from this HTML preview, cross-check it with the live WordPress site, and let their agents do the work. That brief is BOT-BRIEF-RAUL-BRITA.md. The note that goes with it is COVER-EMAIL-BOTS.md. Both are drafts. Neither has been sent.
+
 ## 1. What this is
 
 This is a draft of the public EON Reality website. It is a reading copy for review. It is not the live site.
