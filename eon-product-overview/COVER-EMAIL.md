@@ -14,6 +14,8 @@ Raul and the team,
 
 The draft of the new EON Reality website is in Git, with the briefing your agent needs to finish it.
 
+You do not need Vercel to change it. The pages and the logo are files in Git. Push the branch and the HTML preview updates. The logo file is eon-product-overview/assets/brand/eon-reality-logo-white.png. HANDOVER.md section 2a has the steps. The logo that could not be changed before is on a different site, https://eon-education-government-review.vercel.app/. That site is not this folder.
+
 Repository: https://github.com/DanLejerskar/field-iq-walkthrough
 Branch: cursor/eon-product-overview-589c
 

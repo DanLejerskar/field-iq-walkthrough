@@ -42,9 +42,37 @@ cd field-iq-walkthrough
 git checkout cursor/eon-product-overview-589c
 ```
 
+## 2a. Git is enough. Vercel is not missing.
+
+The pages, the colors, the prices, the films, and the logo are files in this Git branch. Change the file. Push the branch. The HTML preview updates. That is the whole job.
+
+You do not need a Vercel login to see this draft or to change it. Vercel is a second window with a shorter address. It shows the same files. If you cannot open Vercel, you are not blocked.
+
+The repo is public, so you can already read every file:
+
+https://github.com/DanLejerskar/field-iq-walkthrough
+
+To save a change, push branch `cursor/eon-product-overview-589c`, or open a pull request on https://github.com/DanLejerskar/field-iq-walkthrough/pull/1. If GitHub refuses the push, ask Dan to invite your GitHub username. That invite is on GitHub. It is not a Vercel invite.
+
+The logo you could not change before lives on a different website, the long platform at https://eon-education-government-review.vercel.app/. That site is not this folder. This draft's logo is a picture in Git. Replace the picture. You do not open Vercel.
+
+1. Replace this file with the white logo: `eon-product-overview/assets/brand/eon-reality-logo-white.png`
+2. The header size is in `eon-product-overview/site/refresh.css`, in the rule `.brand-logo img`. The height is 56px. Change that number if the logo looks too small or too big.
+3. From `eon-product-overview/site/`, run `python3 build.py`. It must exit 0.
+4. Commit and push this branch.
+5. Wait about a minute. Open the HTML preview again. The new logo is there.
+
+Reading link, no Vercel:
+
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/DanLejerskar/field-iq-walkthrough/cursor/eon-product-overview-589c/eon-product-overview/site/index.html
+
+Leave https://field-iq-walkthrough.vercel.app alone. That is the Field IQ walkthrough. This draft does not use that project.
+
 ## 3. How to see it, and how to publish a change
 
-The site the team operates is a Vercel project named `eon-reality-website`. It is separate from Field IQ.
+Git is how you change the site. The steps in section 2a are enough.
+
+A Vercel project named `eon-reality-website` also exists, separate from Field IQ. Use it only if you want the shorter address https://eon-reality-website.vercel.app. You can skip it.
 
 Open this address:
 

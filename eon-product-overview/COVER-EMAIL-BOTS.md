@@ -27,11 +27,13 @@ The same draft is at https://eon-reality-website.vercel.app
 
 The live site to cross-check is https://eonreality.com/
 
-Give this file to your agents and let them do the work. Do not paste the pages in by hand.
+You do not need Vercel. The website is already in Git. Change a file, push the branch, and the HTML preview updates. The logo is one picture: eon-product-overview/assets/brand/eon-reality-logo-white.png. Replace that file. You do not open Vercel to do it. The logo that could not be changed before is on a different site, https://eon-education-government-review.vercel.app/. That site is not this folder.
 
-eon-product-overview/BOT-BRIEF-RAUL-BRITA.md
+Hand your agent one file:
 
-The same brief is also BOT-BRIEF-RAUL-BRITA.docx. The locked product rules are still in HANDOVER.md.
+eon-product-overview/HANDOVER.md
+
+The same note is HANDOVER.docx. Section 2a says Git is enough, and it has the logo steps. The longer cross-check is BOT-BRIEF-RAUL-BRITA.md if the agent needs the gap list.
 
 What the agents do:
 
